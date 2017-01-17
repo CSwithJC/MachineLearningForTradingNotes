@@ -15,7 +15,7 @@ def get_mean_volume(symbol):
     return df['Volume'].mean()
 
 def test_run():
-    df = pd.read_csv("data/AAPL.csv")
+    df = pd.read_csv("../../data/AAPL.csv")
 
     #plt.show()
     #print df #print entire dataframe
