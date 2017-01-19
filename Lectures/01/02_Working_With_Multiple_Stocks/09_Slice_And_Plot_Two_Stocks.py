@@ -1,4 +1,4 @@
-"""Slice and plot"""
+""" Slice and plot """
 
 import os
 import pandas as pd
@@ -7,17 +7,12 @@ import matplotlib.pyplot as plt
 
 def plot_selected(df, columns, start_index, end_index):
     """Plot the desired columns over index values in the given range."""
-    normalize_data(df)
-    plot_data(df.ix[start_index:end_index, columns], title="Selected data")
-
+    plot_data(df.ix[start_index:end_index, columns])
 
 def symbol_to_path(symbol, base_dir="data"):
     """Return CSV file path given ticker symbol."""
-    return os.path.join(base_dir, "{}.csv".format(str(symbol)))
+    return os.path.join("../../../" + base_dir, "{}.csv".format(str(symbol)))
 
-def normalize_data(df):
-    ''' Normalize stock prices using the first row of the dataframe '''
-    return df / df.ix[0,:]
 
 def get_data(symbols, dates):
     """Read stock data (adjusted close) for given symbols from CSV files."""
