@@ -16,7 +16,7 @@ def test_run():
 
     # NOTE: index_col sets which value should be PK; parse_dates converts dates to Date Time Index Objects
     # NOTE: usecols selects only the columns that are wanted
-    dfSPY = pd.read_csv("../../../data/SPY.csv", index_col="Date",
+    dfSPY = pd.read_csv("../../../data/SPY.csv", index_col='Date',
                         parse_dates=True, usecols=['Date', 'Adj Close'],
                         na_values=['nan'])
 
