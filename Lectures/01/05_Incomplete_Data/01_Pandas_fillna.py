@@ -1,8 +1,9 @@
-""" Compute Cumulative returns. """
+""" Using fillna """
 
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def symbol_to_path(symbol, base_dir="data"):
@@ -47,16 +48,17 @@ def compute_cumulative_returns(df):
 
 
 def test_run():
-    # Read data
-    dates = pd.date_range('2012-07-01', '2012-07-31')  # one month only
-    symbols = ['SPY','XOM']
-    df = get_data(symbols, dates)
+    symbollist = ["FAKE2"]
+    start_date = '2005-12-31'
+    end_date = '2014-12-07'
 
-    # Compute cumulative returns
-    cumulative_returns = compute_cumulative_returns(df)
-    print cumulative_returns
-    plot_data(cumulative_returns, title="Daily returns", ylabel="Daily returns")
+    idx = pd.date_range(start_date, end_date)
+    df_data = get_data(symbollist, idx)
+    plot_data(df_data)
 
+    # fill the gaps found in this dataset:
+    df_data.fillna(method="ffill", inplace="TRUE")  # ffill fills forward, and inplace saves changes in same dataframe
+    plot_data(df_data)
 
 if __name__ == "__main__":
     test_run()
