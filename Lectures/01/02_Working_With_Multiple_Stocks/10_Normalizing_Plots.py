@@ -9,6 +9,7 @@ def plot_selected(df, columns, start_index, end_index):
     """Plot the desired columns over index values in the given range."""
     plot_data(df.ix[start_index:end_index, columns])
 
+
 def symbol_to_path(symbol, base_dir="data"):
     """Return CSV file path given ticker symbol."""
     return os.path.join("../../../" + base_dir, "{}.csv".format(str(symbol)))
@@ -30,9 +31,11 @@ def get_data(symbols, dates):
 
     return df
 
+
 def normalize_data(df):
     """ Normalize stock prices using the first row of the dataframe """
     return df / df.ix[0,:] # : seems to be all of the columns.
+
 
 def plot_data(df, title="Normalized Prices"):
     """Plot stock prices with a custom title and meaningful axis labels."""

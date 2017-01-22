@@ -60,6 +60,7 @@ def test_run():
 
     # Compute daily returns
     daily_returns = compute_daily_returns(df)
+    print daily_returns
     plot_data(daily_returns, title="Daily returns", ylabel="Daily returns")
 
 

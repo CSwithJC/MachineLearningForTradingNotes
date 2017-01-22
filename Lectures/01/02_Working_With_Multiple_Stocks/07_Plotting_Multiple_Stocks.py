@@ -4,6 +4,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 def symbol_to_path(symbol, base_dir="data"):
     """Return CSV file path given ticker symbol."""
     return os.path.join("../../../" + base_dir, "{}.csv".format(str(symbol)))
@@ -25,10 +26,12 @@ def get_data(symbols, dates):
 
     return df
 
+
 def plot_data(df):
-    '''Plot stock prices '''
+    """ Plot stock prices """
     df.plot()
-    plt.show() # must be called to show plots in some environments
+    plt.show()  # must be called to show plots in some environments
+
 
 def test_run():
     # Define a date range

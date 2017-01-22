@@ -39,14 +39,14 @@ def test_run():
     # MORE SLICING:
     # Slice by row range (dates) using DataFrame.ix[] selector
     print 'Slice By Row:'
-    print df.ix['2010-01-01':'2010-01-31'] # The Month of January
+    print df.ix['2010-01-01':'2010-01-31']  # The Month of January
 
     # Slice by Column (Symbols)
     print 'Slice by Column (GOOG)'
-    print df['GOOG'] # a single label selects a single column
+    print df['GOOG']  # a single label selects a single column
 
     print 'Slice by Column (IBM and GLD)'
-    print df[['IBM', 'GLD']] # a list of labels selects multiple columns
+    print df[['IBM', 'GLD']]  # a list of labels selects multiple columns
 
     # Slice through both dimensions (rows and columns)
     print 'Slice by row and column:'
